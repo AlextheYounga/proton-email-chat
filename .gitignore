@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Custom
+__deprecated__
+.DS_Store
+*.DS_Store
