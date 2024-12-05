@@ -28,3 +28,4 @@ __deprecated__
 .DS_Store
 *.DS_Store
 key.bin
+output.css

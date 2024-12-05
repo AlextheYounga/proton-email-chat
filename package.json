@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "npx tailwindcss -i ./src/assets/input.css -o ./src/assets/output.css && vite build",
     "preview": "vite preview",
     "tauri": "tauri",
     "tailwindcss": "npx tailwindcss -i ./src/assets/input.css -o ./src/assets/output.css --watch"
