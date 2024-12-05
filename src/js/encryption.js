@@ -1,6 +1,15 @@
 import { createMessage, encrypt, readMessage, decrypt } from 'openpgp';
+import { invoke } from "@tauri-apps/api/core";
 
-const decryptionKey = 'my-secret-key';
+async function getDecryptionKey() {
+	console.log(
+		"Getting decryption key from Tauri app"
+	)
+	return await invoke("get_decrypt_key");
+}
+
+const decryptionKey = await getDecryptionKey();
+console.log(decryptionKey)
 
 export async function encryptContent(content) {
 	const message = await createMessage({ text: content });

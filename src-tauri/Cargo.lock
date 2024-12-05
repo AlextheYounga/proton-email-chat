@@ -779,6 +779,7 @@ name = "emailchat"
 version = "0.1.0"
 dependencies = [
  "mail-parser",
+ "rand 0.8.5",
  "rusqlite",
  "serde",
  "serde_json",

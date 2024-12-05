@@ -27,3 +27,4 @@ dist-ssr
 __deprecated__
 .DS_Store
 *.DS_Store
+key.bin

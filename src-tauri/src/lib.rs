@@ -15,11 +15,15 @@ fn migrations() -> Vec<Migration> {
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
+	handlers::key_handler::generate_key_file().expect("Failed to generate key file");
     tauri::Builder::default()
         .plugin(tauri_plugin_shell::init())
 		.plugin(SqlBuilder::default()
 		.add_migrations("sqlite:database.db", migrations()).build())
-        .invoke_handler(tauri::generate_handler![handlers::controller::greet])
+        .invoke_handler(tauri::generate_handler![
+			handlers::greet_handler::greet,
+			handlers::key_handler::get_key
+			])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
