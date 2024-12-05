@@ -20,7 +20,8 @@ pub fn run() {
 		.plugin(SqlBuilder::default()
 		.add_migrations("sqlite:database.db", migrations()).build())
         .invoke_handler(tauri::generate_handler![
-			handlers::controller::greet
+			handlers::controller::greet,
+			handlers::importer::import
 		])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

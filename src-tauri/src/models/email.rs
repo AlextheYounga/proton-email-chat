@@ -10,9 +10,10 @@ impl Email {
             description: "create emails table",
             sql: "CREATE TABLE IF NOT EXISTS emails (
 				id INTEGER PRIMARY KEY,
+				proton_id TEXT NOT NULL,
 				subject TEXT NULL,
-				sender TEXT NOT NULL,
-				receiver TEXT NOT NULL,
+				sender_name TEXT NOT NULL,
+				sender_address TEXT NOT NULL,
 				content TEXT NOT NULL,
 				timestamp TIMESTAMP DEFAULT NULL,
 				created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
