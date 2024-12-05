@@ -11,8 +11,8 @@ impl EmailMetadata {
             sql: "CREATE TABLE IF NOT EXISTS email_metadata (
 				id INTEGER PRIMARY KEY,
 				email_id INTEGER NOT NULL,
-				proton_id TEXT NOT NULL,
-				data TEXT NOT NULL,
+				proton_id TEXT NOT NULL UNIQUE,
+				data JSON NOT NULL,
 				FOREIGN KEY(email_id) REFERENCES emails(id)
 			);",
             kind: MigrationKind::Up,
